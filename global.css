@@ -1,0 +1,194 @@
+/* =========================================
+   1. RESET E CONFIGURAÇÕES GERAIS
+   Removemos margens padrão para ter controle total
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Garante que padding não aumente a largura dos elementos */
+}
+
+body {
+    font-family: 'Poppins', sans-serif; /* Fonte moderna e limpa */
+    background-color: #f4f4f9; /* Fundo cinza bem clarinho */
+    color: #333; /* Texto cinza escuro para leitura confortável */
+    line-height: 1.6;
+}
+
+/* =========================================
+   2. CABEÇALHO (HEADER)
+   ========================================= */
+header.titulo {
+    background-color: #00509d; /* Azul forte (estilo corporativo/tech) */
+    color: #ffffff;
+    text-align: center;
+    padding: 3rem 1rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+header.titulo h1 {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+/* =========================================
+   3. CONTEÚDO PRINCIPAL (MAIN)
+   ========================================= */
+main {
+    max-width: 800px; /* Limita a largura para não ficar esticado em telas grandes */
+    margin: 2rem auto; /* Centraliza o bloco na tela */
+    padding: 0 1rem;
+}
+
+section {
+    background-color: #ffffff;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Sombra suave */
+}
+
+section h2 {
+    color: #00509d;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* =========================================
+   4. LISTA DE PROJETOS (BOTÕES)
+   Aqui transformamos os links em botões bonitos
+   ========================================= */
+.projetos ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column; /* Um projeto embaixo do outro */
+    gap: 1rem; /* Espaço entre os botões */
+}
+
+/* Estilo do Link parecendo Botão */
+.btn-projeto {
+    display: block; /* Ocupa a largura disponível */
+    background-color: #ffffff;
+    border: 2px solid #00509d;
+    color: #00509d;
+    padding: 1rem;
+    text-align: center;
+    text-decoration: none; /* Tira o sublinhado */
+    font-weight: bold;
+    border-radius: 5px;
+    transition: all 0.3s ease; /* Animação suave */
+}
+
+/* Efeito ao passar o mouse (Hover) */
+.btn-projeto:hover {
+    background-color: #00509d;
+    color: #ffffff;
+    transform: translateY(-2px); /* Sobem levemente */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* =========================================
+   5. RODAPÉ (FOOTER) E FORMULÁRIO
+   ========================================= */
+footer {
+    background-color: #222; /* Fundo escuro */
+    color: #fff;
+    padding: 3rem 1rem;
+    margin-top: auto;
+}
+
+.form-contact {
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form-contact input, 
+.form-contact textarea {
+    padding: 0.8rem;
+    border-radius: 4px;
+    border: none;
+    font-family: inherit;
+    width: 100%;
+}
+
+.form-contact button {
+    background-color: #28a745; /* Verde para ação de enviar */
+    color: white;
+    padding: 1rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.form-contact button:hover {
+    background-color: #218838;
+}
+
+/* =========================================
+   6. REDES SOCIAIS
+   ========================================= */
+.social-media {
+    border: 1px solid #444;
+    padding: 2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.social-media legend {
+    padding: 0 10px;
+    font-weight: bold;
+    color: #ccc;
+    font-size: 1.2rem;
+}
+
+.social-media ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.btn-social {
+    display: inline-flex; /* Permite alinhar ícone e texto */
+    align-items: center;  /* Centraliza verticalmente */
+    gap: 10px;            /* Espaço entre o ícone e o texto */
+    padding: 12px 24px;
+    border-radius: 50px;  /* Bordas bem redondas (Pílula) */
+    text-decoration: none;
+    font-weight: bold;
+    color: white;         /* Texto branco */
+    transition: transform 0.2s, box-shadow 0.2s;
+    font-size: 1rem;
+}
+
+/* Cor Específica do LinkedIn */
+.linkedin {
+    background-color: #0077b5; 
+}
+
+/* Cor Específica do GitHub */
+.github {
+    background-color: #333; 
+}
+
+/* Efeito Hover (Mouse em cima) */
+.btn-social:hover {
+    transform: translateY(-3px); /* Sobe um pouquinho */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3); /* Sombra para dar profundidade */
+    filter: brightness(1.1); /* Clareia levemente a cor */
+}
+
+/* Tamanho do ícone um pouco maior que o texto */
+.btn-social i {
+    font-size: 1.2rem;
+}
