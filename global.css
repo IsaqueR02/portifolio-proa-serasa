@@ -59,11 +59,21 @@ section h2 {
    4. LISTA DE PROJETOS (BOTÕES)
    Aqui transformamos os links em botões bonitos
    ========================================= */
+.projetos {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    position: relative; /* necessário para posicionamento absoluto da popup */
+}
+
 .projetos ul {
     list-style: none;
     display: flex;
-    flex-direction: column; /* Um projeto embaixo do outro */
-    gap: 1rem; /* Espaço entre os botões */
+    flex-direction: column;
+    gap: 1rem;
+    flex: 1 1 60%;
+    margin: 0;
+    padding: 0;
 }
 
 /* Estilo do Link parecendo Botão */
@@ -241,4 +251,63 @@ footer {
 .carrossel-imagens .destaque:hover {
     border-color: #ff6f61;
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.project-description {
+    position: absolute;
+    top: 0;
+    left: calc(100% + 12px);
+    background-color: #e8f4f8;
+    border-left: 4px solid #00509d;
+    padding: 0.75rem 1rem;
+    margin: 0;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    color: #555;
+    min-height: 60px;
+    min-width: 220px;
+    max-width: 320px;
+    display: none;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+    animation: slideRight 0.25s ease-out;
+    z-index: 50;
+}
+
+.project-description.active {
+    display: block;
+}
+
+@keyframes slideRight {
+    from {
+        opacity: 0;
+        transform: translateX(-8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Spinner pequeno para indicar carregamento */
+.project-description .spinner {
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(0,0,0,0.08);
+    border-top-color: #00509d;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin: 6px auto;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+@media (max-width: 800px) {
+    .projetos { flex-direction: column; }
+    .project-description {
+        position: relative;
+        order: -1;
+        width: 100%;
+        left: 0;
+        margin-bottom: 1rem;
+    }
 }
