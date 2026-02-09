@@ -192,3 +192,53 @@ footer {
 .btn-social i {
     font-size: 1.2rem;
 }
+
+.carrossel-imagens {
+  width: 100%; /* Largura total da tela ou definida */
+  max-width: 600px;
+  margin: auto;
+  overflow: hidden; /* Esconde as imagens fora da área */
+  position: relative;
+  border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 1rem;
+    margin: 2rem 0;
+}
+
+.carrossel {
+  display: flex; /* Coloca as imagens lado a lado */
+  width: 400%; /* 100% * número de imagens (3 + 1 repetição = 4) */
+  animation: slideAnimation 10s infinite; /* Duração e repetição */
+}
+
+.carrossel img {
+  width: 25%; /* Cada imagem ocupa 1/4 (100% / 4) do container .slides */
+  height: auto;
+}
+
+/* Animação para deslizar */
+@keyframes slideAnimation {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(0); }
+  30% { transform: translateX(-25%); }
+  55% { transform: translateX(-25%); }
+  60% { transform: translateX(-50%); }
+  85% { transform: translateX(-50%); }
+  100% { transform: translateX(0); } /* Volta ao início */
+}
+
+
+.carrossel-imagens .destaque {
+    min-width: 300px;
+    flex: 0 0 auto;
+    border: 2px solid #00509d;
+    border-radius: 8px;
+    padding: 1rem;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.carrossel-imagens .destaque:hover {
+    border-color: #ff6f61;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
